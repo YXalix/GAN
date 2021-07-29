@@ -15,7 +15,9 @@ class MyDataset(Dataset):
         return len(self.data)
 def main():
     dataset=MyDataset('b.npy')
-    data= DataLoader(dataset, batch_size=1, shuffle=True, num_workers=1)
+    data= DataLoader(dataset, batch_size=10, shuffle=True, num_workers=1)
+    for maps in data:
+        print(maps)
 
 if __name__ == '__main__':
 	main()
